@@ -1,0 +1,25 @@
+*, ::after, ::before{
+  margin: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  
+  background: rgb(255,255,255);
+  background: linear-gradient(220deg, rgba(255,255,255,1) 0%, rgba(3,197,204,1) 100%);
+
+}
+h3{
+  font-size: 1.5rem;
+}
+p{
+  font-size: 1rem;
+}
+a{
+  text-decoration: none;
+}
