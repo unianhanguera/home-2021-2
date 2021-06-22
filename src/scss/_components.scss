@@ -11,6 +11,8 @@
     width: 100%;
     flex-direction: row;
 
+
+
     .card{
 
       text-decoration: none;
@@ -25,6 +27,17 @@
         margin-bottom: 1rem;
       }
 
+      &:nth-child(-1){
+        @media screen and (max-width: 600px) {
+          margin-right: 1rem;
+        }
+      }
+      &:nth-child(1){
+        @media screen and (max-width: 600px) {
+          margin-left: 1rem;
+        }
+      }
+
       background-color: #fff;
       padding: 2rem;
       border-radius: 10px;
@@ -34,8 +47,6 @@
 
       @media screen and (max-width: 600px) {
         min-width: 18rem;
-        margin-left: 1rem;
-        margin-right: 0;
       }
 
       
@@ -54,5 +65,18 @@
         display: none;
       }
     }
+  }
+}
+
+.lista-de-links{
+  padding: 0rem 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  &_item{
+    margin: 0.2rem 0.3rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+    background-color: $secondary-color;
   }
 }

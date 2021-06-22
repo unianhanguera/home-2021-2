@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>UNIGOIÁS</title>
 </head>
 <body>
-  <link rel="stylesheet" href="css/style.css">
   <main>
     <header>
       <div class="container">
         <div class="topbar">
-          <a class="brand"><img src="images/unigoias.svg" height="50" alt="UNIGOIÁS"></a>
+          <a href="/" class="brand"><img src="images/unigoias.svg" height="50" alt="UNIGOIÁS"></a>
+          <!-- MENU DA TOPBAR -->
           <div class="main-menu">
-            <ul class="main-menu_main-list">
+            <label class="menu-mobile_icon">
+              <input type="checkbox" name="menu-mobile_input" class="menu-mobile_icon_input">
+              <span class="menu-mobile_icon_bar"></span>
+            </label>
+            <ul class="main-menu_main-list mostar-menu">
               <li class="menu-item_secondary">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
+                <a href="/#links" rel="noopener noreferrer">
                   <label>ACESSO RÁPIDO</label>
                 </a>
               </li>
               <li class="menu-item_secondary">
                 <label><span class="material-icons">&#xe313;</span>COLABORADOR</label>
                 <ul class="main-menu_sub-list">
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">Site Graduação Presencial</a></li>
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/ead" target="_blank" rel="noopener noreferrer">Site Graduação EaD</a></li>
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/ead" target="_blank" rel="noopener noreferrer">Site Pós-Graduação</a></li>
-                  <li class="menu-item"><a href="http://portal.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">Portal do Aluno</a></li>
-                  <li class="menu-item"><a href="https://uni-anhanguera.blackboard.com/webapps/login/?action=relogin" target="_blank" rel="noopener noreferrer">Portal Educacional</a></li>
-                  <li class="menu-item"><a href="http://portal.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">E-mail Institucional</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-projetos', 'http://redmine.anhanguera.edu.br/')">Portal de Projetos</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-do-aluno', 'http://portal.anhanguera.edu.br/')">Portal do Aluno</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-educacional', 'https://uni-anhanguera.blackboard.com/webapps/login/?action=relogin')">Portal Educacional</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-mobile', 'https://mobile.anhanguera.edu.br/')">Portal Mobile</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-do-professor-rh', 'https://portal3.anhanguera.edu.br/Corpore.Net')">Portal do Professor (RH)</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('repositorio', 'http://repositorio.anhanguera.edu.br:8080/')">Repositório</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('suporte-dti', 'http://glpi.anhanguera.edu.br/')">Suporte D.T.I.</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('email-institucional', 'https://outlook.office.com/mail/inbox/id/AAQkADY2NGFhZDVkLWU4NmMtNDMwZi05MmJmLTBhNGRmMzhhYzY3YQAQAAzxoELbUxxLobyRGPpKOo0%3D')">E-mail Institucional</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('seja-um-polo', 'https://unigoias.com/polos/parceiros/')">Seja um Polo</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('trabalhe-conosco', 'https://anhanguera.edu.br/trabalhe-conosco')">Trabalhe Conosco</a></li>
                 </ul>
               </li>
               <li class="menu-item_primary">
                 <label><span class="material-icons">&#xe313;</span>SOU ALUNO</label>
                 <ul class="main-menu_sub-list">
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">Site Graduação Presencial</a></li>
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/ead" target="_blank" rel="noopener noreferrer">Site Graduação EaD</a></li>
-                  <li class="menu-item"><a href="http://ead.anhanguera.edu.br/ead" target="_blank" rel="noopener noreferrer">Site Pós-Graduação</a></li>
-                  <li class="menu-item"><a href="http://portal.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">Portal do Aluno</a></li>
-                  <li class="menu-item"><a href="https://uni-anhanguera.blackboard.com/webapps/login/?action=relogin" target="_blank" rel="noopener noreferrer">Portal Educacional</a></li>
-                  <li class="menu-item"><a href="http://portal.anhanguera.edu.br/" target="_blank" rel="noopener noreferrer">E-mail Institucional</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('calendario-ead', 'https://anhanguera.edu.br/ead/calendario-academico-ead/')">Calendário EaD</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('calendario-presencial', 'https://anhanguera.edu.br/documentos/calendario-academico-2021-1.pdf')">Calendário Ensino Presencial</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('colacao-de-grau', 'https://unigoias.com/colacao')">Colação de Grau</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('site-ead', 'http://ead.anhanguera.edu.br/')">Site da Graduação EaD</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('site-presencial', 'http://anhanguera.edu.br/presencial')">Site da Graduação Presencial</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('site-pos', 'http://ead.anhanguera.edu.br/pos')">Site da Pós-Graduação</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('manuais-sapc', 'https://anhanguera.edu.br/sapc/manual-de-elaboracao-de-trabalhos/')">Manuais de Elaboração de Trabalhos - SAPC</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-projetos', 'http://redmine.anhanguera.edu.br/')">Portal de Projetos</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-do-aluno', 'http://portal.anhanguera.edu.br/')"><strong>Portal do Aluno</strong></a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-educacional', 'https://uni-anhanguera.blackboard.com/webapps/login/?action=relogin')"><strong>Portal Educacional</strong></a></li>
+                  <li class="menu-item"><a onclick="acessarLink('portal-mobile', 'https://mobile.anhanguera.edu.br/')">Portal Mobile</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('repositorio', 'http://repositorio.anhanguera.edu.br:8080/')">Repositório</a></li>
+                  <li class="menu-item"><a onclick="acessarLink('email-institucional', 'https://outlook.office.com/mail/inbox/id/AAQkADY2NGFhZDVkLWU4NmMtNDMwZi05MmJmLTBhNGRmMzhhYzY3YQAQAAzxoELbUxxLobyRGPpKOo0%3D')">E-mail Institucional</a></li>
                 </ul>
               </li>
             </ul>
@@ -48,12 +65,14 @@
         </div>
       </div>
     </header>
+    <!-- CHAMADA DE CAMPANHA -->
     <section class="presentation">
       <img src="images/imagem-fundo-02.png" alt="deixe-sua-marca"  class="float-image">
       <div class="container">
         <div class="presentation_images">
           <img src="images/deixe-sua-marca.svg" alt="">
         </div>
+        <!-- LISTA DE CARDS -->
         <div class="presentation_card-list">
           <a href="" class="card">
             <div class="card_icon">
@@ -77,7 +96,14 @@
       </div>
     </section>
   </main>
-  <section class="fast-access"></section>
+  <!-- RODAPÉ -->
+  <section id="links" class="fast-access">
+    <div class="container">
+      <h4><span class="material-icons">&#xe157;</span>LINKS PARA ACESSO RÁPIDO</h4>
+      <div class="lista-de-links">
+      </div>
+    </div>
+  </section>
   <footer>UNIGOIÁS - Centro Universitário de Goiás</footer>
   <script src="js/index.js"></script>
 </body>

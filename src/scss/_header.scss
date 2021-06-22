@@ -2,7 +2,6 @@ header{
   .container{
     .topbar{
       //gradiente na border-bottom
-
       border-bottom: solid 2px;
       border-image: linear-gradient(to right, #ffffff00 0%, #ffffff9f 50%, #ffffff00 100% );
       border-image-slice: 1;
@@ -15,9 +14,10 @@ header{
       justify-content: space-between;
       .main-menu{
         
+        
         display: flex;
         position: relative;
-
+        
         ul{
           list-style: none;
           
@@ -25,18 +25,69 @@ header{
 
         &_main-list{
           display: flex;
+          
+          *{
+            user-select: none;
+          }
+          
+
+          //mudar para ocultar somente no mobile quando terminar de desenvolver
+          @media screen and (max-width: 700px) {
+            display: none;
+            border-radius: 10px 5px 10px 10px;
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background-color: $primary-color;
+            height: auto;
+            min-height: 50vh;
+            z-index: 11;
+            flex-direction: column;
+            padding: 1rem;
+            min-width: 70vw;
+
+            @media screen and (max-width: 700px) {
+              flex-direction: column-reverse;
+            }
+
+            .main-menu_sub-list{
+              display: flex;
+              
+              
+              overflow: hidden;
+              opacity: 1;
+              position: relative;
+              background-color: transparent;
+            }
+
+            &::before{
+              content: " ";
+              position: absolute;
+              top: -0.8rem;
+              right: 0;
+              width: 0; 
+              height: 0; 
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+              border-bottom: 15px solid $primary-color;
+            }
+          }
 
           &>li{
             position: relative;
             label{
+              cursor: pointer;
               padding: 1rem 1rem;
               color: $primary-color;
               display: flex;
               align-items: center;
               font-size: 16px;
-              
 
+              @media screen and (max-width: 700px) {
+                color: white;
+                padding: 0;
 
+              }
               .material-icons{
                 margin-right: 0.3rem;
                 background-color: $primary-color;
@@ -74,7 +125,7 @@ header{
         }
 
         &_sub-list{
-          //box-shadow: 0px 0px 0px 2px  $accent-color;
+          
           display: none;
           flex-direction: column;
           transition: opacity 0.8s;
@@ -84,7 +135,7 @@ header{
           z-index: 11;
           background-color: $primary-color;
           border-radius: 10px;
-          min-height: 15rem;
+          min-height: 5rem;
           min-width: 15rem;
           padding: 1rem;
           
@@ -102,6 +153,7 @@ header{
               transition: 0.2s;
               display: flex;
               width: 100%;
+              cursor: pointer;
 
               &:hover{
                 color: $tertiary-color;
@@ -110,9 +162,69 @@ header{
           }
 
         }
-        /*coloquei somente para testar o layout*/
-        @media screen and (max-width: 600px) {
+
+        //menu-mobile
+        .menu-mobile_icon{
+          @media screen and (max-width: 700px) {
+            display: flex;
+          }
           display: none;
+          align-items: center;
+          width: 2.5rem;
+          height: 2.5rem;
+          &_input{
+            visibility: hidden;
+          }
+          &_bar{
+            display: flex;
+            width: 100%;
+            background-color: $primary-color;
+            height: 3px;
+            position: relative;
+            
+
+            &::before{
+              content: "";
+              position: absolute;
+              top: -0.5rem;
+              display: flex;
+              background-color: $primary-color;
+              height: 3px;
+              width: 100%;
+              transition: transform 0.2s;
+            }
+            &::after{
+              content: "";
+              position: absolute;
+              display: flex;
+              background-color: $primary-color;
+              height: 3px;
+              width: 100%;
+              bottom: -0.5rem;
+              transition: transform 0.2s;
+              
+            }
+          }
+
+          &_input:checked{
+            &+.menu-mobile_icon_bar{
+
+              background-color: transparent;
+  
+              &::before{
+                transform: rotate(-40deg);
+                top: 0;
+              }
+              &::after{
+                transform: rotate(40deg);
+                bottom: 0;
+              }
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            //display: none;
+          }
         }
       }
     }

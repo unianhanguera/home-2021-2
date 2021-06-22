@@ -1,15 +1,35 @@
 main{
   min-height: 100vh;
+  height: auto;
 
 }
 .container{
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1080px;
   z-index: 10;
+
+  @media screen and (max-width: 1200px) {
+    width: 900px;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 85%;
+  }
+    
+  @media screen and (max-width: 800px) {
+    width: 95%;
+  }
 
   @media screen and (max-width: 600px) {
     width: 85%;
   }
+
+
+
+
+
+
+
 }
 .presentation{
 
@@ -63,4 +83,28 @@ main{
       right: 0;
     }
   }
+}
+
+.fast-access{
+  background-color: $base-color;
+  padding: 1.5rem 0;
+
+  h4{
+    color: $primary-color;
+    span{
+      margin-right: 0.5rem;
+
+    }
+  }
+
+  .access-link-1{
+    background-color: #107C41;
+  }
+  .access-link-2{
+    background-color: #07A2F5;
+  }
+  .access-link-3{
+    background-color: #A6A6A6;
+  }
+
 }
