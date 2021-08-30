@@ -1,4 +1,5 @@
 # Página Inicial (Home) UNIGOIÁS
+Home page constrúida para a campanha de captação de 2021/2 da UNIGOIÁS
 ### Campanha 2021/2
 
 ![Home](home-2021-2.gif)
